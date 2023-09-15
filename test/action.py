@@ -18,6 +18,7 @@ from keydict import key_dict
 
 
 def press(key):
+    """调用win32模拟按键"""
     if type(key) in [list, tuple, dict]:
         key_names = list(key)  # 组合键
     else:
@@ -52,21 +53,26 @@ def wait(t):
 
 
 def start(fpath):
+    """os启动文件"""
     # 验证文件路径
     if os.path.exists(fpath):
         if os.path.isfile(fpath):
             command = 'start "" {} -popupwindow'.format(shlex.quote(fpath))
-            os.system(command)
+            try:
+                os.system(command)
+            except:
+                return 1
     # 路径错误
-    return 1
+    return 0
 
 # 关闭游戏
 
 
 def killgame(fpath):
+    """os结束进程"""
+    command = 'taskkill /f /t /im {}'.format(os.path.split(fpath)[-1])
     try:
-        command = 'taskkill /f /t /im {}'.format(os.path.split(fpath)[-1])
         os.system(command)
-        return 0
-    except:
         return 1
+    except:
+        return 0
