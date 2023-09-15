@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.autopep8",
+			"path": "D:/Anaconda/envs/mak/python.exe"
+		},
+		"python.terminal.activateEnvInCurrentTerminal": true,
+	}
+}

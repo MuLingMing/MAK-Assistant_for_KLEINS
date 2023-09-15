@@ -1,0 +1,4 @@
+--index https://pypi.mirrors.ustc.edu.cn/simple/
+pywin32 #conda install pywin32
+paddlepaddle #pip install paddlepaddle
+paddleocr #pip install "paddleocr>=2.0.1",#pillow included
